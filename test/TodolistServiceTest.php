@@ -38,4 +38,22 @@ function testAddTodolist(): void
 
     $todolistService->showTodolist();
 }
-testAddTodolist();
+
+function testRemoveTodolist(): void
+{
+    $todolistRepository = new TodolistRepositoryImpl;
+
+    $todolistService = new TodolistServiceImpl($todolistRepository);
+
+    // tambahkan datanya dulu 
+    $todolistService->addTodolist("Belajar PHP");
+    $todolistService->addTodolist("Belajar PHP OOP");
+    $todolistService->addTodolist("Belajar PHP Database");
+
+    $todolistService->showTodolist();
+    // coba hapus todolist ke 1
+    $todolistService->removeTodolist(1);
+
+    $todolistService->showTodolist();
+}
+testRemoveTodolist();
