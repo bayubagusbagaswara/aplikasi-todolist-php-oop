@@ -19,7 +19,7 @@ namespace Repository {
     class TodolistRepositoryImpl implements TodolistRepository
     {
         // buat representasi datanya
-        private array $todolist = array();
+        public array $todolist = array();
 
         function save(Todolist $todolist): void
         {
@@ -27,6 +27,7 @@ namespace Repository {
 
         function remove(int $number): bool
         {
+            return true;
         }
         function findAll(): array
         {
