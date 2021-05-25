@@ -23,6 +23,9 @@ namespace Repository {
 
         function save(Todolist $todolist): void
         {
+            // untuk menambah data todolist
+            $number = sizeof($this->todolist) + 1;
+            $this->$todolist[$number] = $todolist;
         }
 
         function remove(int $number): bool
