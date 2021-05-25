@@ -2,7 +2,7 @@
 
 namespace Entity {
 
-    class TodoList
+    class Todolist
     {
         // buat properti
         // cuma butuh data todo nya
