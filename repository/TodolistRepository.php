@@ -14,4 +14,23 @@ namespace Repository {
         function remove(int $number): bool;
         function findAll(): array; // balikannya adalah array isinya todolist
     }
+
+    // buat sebuah class untuk implementasi TodolistRepository
+    class TodolistRepositoryImpl implements TodolistRepository
+    {
+        // buat representasi datanya
+        private array $todolist = array();
+
+        function save(Todolist $todolist): void
+        {
+        }
+
+        function remove(int $number): bool
+        {
+        }
+        function findAll(): array
+        {
+            return $this->todolist;
+        }
+    }
 }
