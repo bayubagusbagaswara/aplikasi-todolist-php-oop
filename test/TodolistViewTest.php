@@ -28,4 +28,25 @@ function testViewShowTodolist(): void
     $todolistView->showTodolist();
 }
 
-testViewShowTodolist();
+function testViewAddTodolist(): void
+{
+
+    $todolistRepository = new TodolistRepositoryImpl;
+    $todolistService = new TodolistServiceImpl($todolistRepository);
+    $todolistView = new TodolistView($todolistService);
+
+    // masukan beberapa data
+    $todolistService->addTodolist("Belajar PHP");
+    $todolistService->addTodolist("Belajar PHP OOP");
+    $todolistService->addTodolist("Belajar PHP Database");
+
+    // tampilkan dulu todolist yang sudah tersedia
+    $todolistService->showTodolist();
+
+    // menambah todolist
+    $todolistView->addTodolist();
+
+    // setelah ditambah, apakah datanya berhasil disimpan
+    $todolistService->showTodolist();
+}
+testViewAddTodolist();
